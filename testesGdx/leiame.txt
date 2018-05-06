@@ -1,0 +1,5 @@
+Testes realizados
+
+	GammaGdx a partir das redes base é utilizado iteração gamma para melhorá-las.
+
+	TrainGdx treina as redes bases.
