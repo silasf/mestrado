@@ -6,7 +6,7 @@
 % Define these variables appropriately:
 mail = 'resptestserv@gmail.com'; %Your GMail email address
 mailDest = 'silassouzaf@yahoo.com.br'; % email destino
-password = 'ztzh1136';  %Your GMail password
+password = 'Abracadabra';  %Your GMail password
 setpref('Internet','SMTP_Server','smtp.gmail.com');
 
 setpref('Internet','E_mail',mail);

@@ -49,5 +49,6 @@ function [ nets ] = lamTreino_allAut3( varargin )
         save(str,'nets');
     end
     mailteste %script para avisar o termínio do treinamento
+    mailteste
 end
 
