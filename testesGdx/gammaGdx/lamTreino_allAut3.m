@@ -24,7 +24,7 @@ function [ nets ] = lamTreino_allAut3( varargin )
     
     for k=1:length(gammas)
         gamma = gammas(1,k);
-        parfor j=1:tm 
+        for j=1:tm 
             rede = net{1,j};
             for i = ini:fim
 
