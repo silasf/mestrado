@@ -20,7 +20,7 @@ function [ nets ] = lamTreino_allAut3( varargin )
 
 
     tm = length(net);
-    nets = cell(tm,fim);
+    nets = cell(1,fim);
     
     for k=1:length(gammas)
         gamma = gammas(1,k);
@@ -41,12 +41,14 @@ function [ nets ] = lamTreino_allAut3( varargin )
                     rede = reTreino( rede,di,dt,w,1);
                 end
 
-                nets{j,i} = rede;
-                fprintf('%d.%d \n',j,i);% k virou i, mudanca da paralelizacao
-            end 
+                nets{1,i} = rede; % nao se cria matriz por problema de memória
+                fprintf('%d.%d ',j,i);% k virou i, mudanca da paralelizacao
+            end
+            fprintf('\n');
+            str = sprintf('gamma%d_%d.mat',gamma,j);
+            save(str,'nets');
+            nets = cell(1,fim); %problema com memoria importante zerar o vetor
         end
-        str = sprintf('gamma%d.mat',gamma);
-        save(str,'nets');
     end
     mailteste %script para avisar o termínio do treinamento
     mailteste

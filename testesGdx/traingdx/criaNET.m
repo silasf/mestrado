@@ -21,7 +21,7 @@ for i=1:net.numLayers
 end
 
 net.trainParam.min_grad = 1e-20;
-net.trainParam.epochs = 15000;
+net.trainParam.epochs = 20000;
 net.trainParam.goal = 1e-5;
 net.trainParam.max_fail = 10;
 net.trainParam.lr=0.1;

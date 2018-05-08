@@ -26,5 +26,5 @@
         end
         
     end
-    save('traino30a100_15kepc.mat','all_nets','times');
+    save('traino30a100_20kepc.mat','all_nets','times');
     clear all;
