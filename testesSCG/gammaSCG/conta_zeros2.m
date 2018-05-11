@@ -13,7 +13,6 @@ function [z,nz]=conta_zeros2(entrada,zconsec)
 n=numel(entrada);       % Número de amostras da entrada quantizada
 nz=zeros(1,n);          % Histograma da contagem do numero de zeros para caracterizar o canal
 z=zeros(1,n);           % Target gerado
-flag = 0;               % problema encontrado com indice
 
 numz=0;                 % inicia o contador de zeros
 ind=1;                  % índice inicial
@@ -26,7 +25,6 @@ for i=1:n               % para todas as amostras
             indice(1,ind)=i-numz;       % armazena o local do início do intervalo de oportunidade
             indice(2,ind)=numz;         % armazena o local de fim do intervalo de oportunidade
             ind=ind+1;                  % incrementa o índice
-            flag = 1;                   % marca a inicializacao do indice
         end
         numz=0;         % zera o contador de zeros
     end
@@ -38,7 +36,6 @@ if(numz>=zconsec)           % para o considerar o último intervalo
    indice(1,ind)=i-numz+1;    % local de inicio do último intervalo
    indice(2,ind)=numz;      % local de final do último intervalo
    ind=ind+1;               % incrementa o índice
-   
 end
 
         
@@ -48,7 +45,7 @@ for i=1:ind-1                   % para todos os índices
 %         z(1,(indice(1,i)+j))=1;
 %     end
 end
-if flag ==1
-    z(1,(indice(1,1))) = 0;
+
+z(1,(indice(1,1))) = 0;
 
 end
